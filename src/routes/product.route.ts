@@ -1,4 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
+import { productController } from "../controller/product.controller";
 
 export const productRoute = (req: IncomingMessage, res: ServerResponse) => {
   const url = req.url; // 'root url
@@ -14,7 +15,7 @@ export const productRoute = (req: IncomingMessage, res: ServerResponse) => {
   }
   
   else if (url?.startsWith("/product")) {
-    console.log("this is product route");
+    productController(req , res)
   }
   
   else {
