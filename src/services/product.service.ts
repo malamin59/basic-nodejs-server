@@ -9,4 +9,6 @@ export function readProduct() {
 // console.log(data)
 return JSON.parse(data)
 }
-
+export function writeProduct (product : any) {
+    fs.writeFileSync(filePath, JSON.stringify(product))
+}
